@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(0.9711 0.0074 80.7211);
+  --background: oklch(0.93 0 none);
   --foreground: oklch(0.3000 0.0358 30.2042);
   --card: oklch(0.9711 0.0074 80.7211);
   --card-foreground: oklch(0.3000 0.0358 30.2042);
@@ -39,6 +39,7 @@
   --font-sans: Montserrat, sans-serif;
   --font-serif: Merriweather, serif;
   --font-mono: Source Code Pro, monospace;
+  --font-pacifico: Pacifico, sans-serif;
   --radius: 0.5rem;
   --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
   --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
@@ -88,6 +89,7 @@
   --font-sans: Montserrat, sans-serif;
   --font-serif: Merriweather, serif;
   --font-mono: Source Code Pro, monospace;
+  --font-pacifico: Pacifico, sans-serif;
   --radius: 0.5rem;
   --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
   --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
@@ -136,6 +138,7 @@
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --font-serif: var(--font-serif);
+  --font-pacifico: var(--font-pacifico);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);

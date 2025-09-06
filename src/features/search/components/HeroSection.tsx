@@ -1,26 +1,46 @@
 // src/features/search/components/HeroSection.tsx
-import React from 'react';
-import { SearchForm } from './SearchForm';
-import { PopularSearches } from './PopularSearches';
+import React from "react";
+import { SearchForm } from "./SearchForm";
+import { PopularSearches } from "./PopularSearches";
+import { Card, CardContent } from "@/shared/components/ui/card";
+import Image from "next/image";
 
 export function HeroSection() {
   return (
-    <div className="relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
-        <div className="text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-            Znajdź najlepszego
-            <span className="text-primary block">weterynarza specjalistę</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-            Kardiolog, dermatolog, neurolog - znajdź odpowiedniego specjalistę dla swojego pupila w
-            kilka sekund
-          </p>
+    <div className="relative py-4">
+      <Card className="">
+        <CardContent className="relative">
+          <div className="text-left">
+            <div className="flex gap-4">
+              <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 z-1000 basis-2/3">
+                Znajdź najlepszego
+                <span className="text-primary block">
+                  weterynarza specjalistę
+                </span>
+              </h1>
+              <div className="relative flex basis-1/3">
+                <Image
+                  src="/dogo.png"
+                  alt="Hero Image"
+                  width={200}
+                  height={200}
+                  className="absolute right-10 bottom-0"
+                />
+                <Image
+                  src="/cato.png"
+                  alt="Hero Image"
+                  width={150}
+                  height={150}
+                  className="absolute right-40 bottom-0"
+                />
+              </div>
+            </div>
 
-          <SearchForm />
-          <PopularSearches />
-        </div>
-      </div>
+            <SearchForm />
+            <PopularSearches />
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }

@@ -1,16 +1,12 @@
+// TODO: Add more cities or make it dynamic
 export const POLISH_CITIES = [
+  'Cała Polska',
   'Warszawa',
   'Kraków',
-  'Gdańsk',
-  'Wrocław',
-  'Poznań',
   'Łódź',
+  'Wrocław',
+  'Gdańsk',
+  'Poznań',
   'Katowice',
-  'Szczecin',
-  'Bydgoszcz',
   'Lublin',
-  'Białystok',
-  'Toruń',
-  'Rzeszów',
-  'Olsztyn'
 ] as const;

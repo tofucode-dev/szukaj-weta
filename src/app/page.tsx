@@ -1,13 +1,17 @@
-import React from 'react';
-import { HeroSection } from '@/features/search/components/HeroSection';
-import { Header } from '@/shared/components/layout/Header';
+import React from "react";
+import { HeroSection } from "@/features/search/components/HeroSection";
+import { Header } from "@/shared/components/layout/Header";
+import { RecomendedSection } from "@/features/search/components/RecomendedSection";
+import { Footer } from "@/shared/components/layout/Footer";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <div className="min-h-screen w-full p-4 flex flex-col">
       <Header />
       <HeroSection />
-     {/*  <StatsSection />
+      <RecomendedSection />
+      <Footer />
+      {/*  <StatsSection />
       <HowItWorksSection /> */}
     </div>
   );

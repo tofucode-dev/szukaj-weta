@@ -1,28 +1,28 @@
 // src/shared/components/layout/Header.tsx
-import React from 'react';
-import { Heart } from 'lucide-react';
-import { Button } from '@/ui/button';
+import React from "react";
+import { PawPrint } from "lucide-react";
+import { Card, CardContent } from "../ui/card";
 
 export function Header() {
   return (
-    <nav className="bg-white/80 backdrop-blur-md border-b sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="backdrop-blur-md sticky top-4 z-50">
+      <Card>
+        <CardContent>
+          <div className="flex items-center space-x-2">
+            <PawPrint className="h-10 w-10 text-primary" />
+            <span className="text-4xl text-foreground font-pacifico">
+              SzukajWeta.pl
+            </span>
+          </div>
+        </CardContent>
+      </Card>
+      {/*    <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-2">
-            <Heart className="h-8 w-8 text-primary" />
-            <span className="text-2xl font-bold text-foreground">SzukajWeta.pl</span>
-          </div>
-          <div className="hidden md:flex items-center space-x-6">
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              Jak to działa
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              Dla weterynarzy
-            </a>
-            <Button>Zaloguj się</Button>
+          
           </div>
         </div>
-      </div>
+      </div> */}
     </nav>
   );
 }

@@ -1,17 +1,20 @@
 // src/features/search/components/SpecialtyAutocomplete.tsx
-import React, { useState, useRef, useEffect } from 'react';
-import { Heart, ChevronDown } from 'lucide-react';
-import { Label } from '@/shared/components/ui/label';
-import { Input } from '@/shared/components/ui/input';
-import { useAutocomplete } from '../hooks/useAutocomplete';
-import { VETERINARY_SPECIALTIES } from '../constants/specialities';
+import React, { useState, useRef, useEffect } from "react";
+import { Heart, ChevronDown } from "lucide-react";
+import { Label } from "@/shared/components/ui/label";
+import { Input } from "@/shared/components/ui/input";
+import { useAutocomplete } from "../hooks/useAutocomplete";
+import { VETERINARY_SPECIALTIES } from "../constants/specialities";
 
 interface SpecialtyAutocompleteProps {
   value: string;
   onChange: (value: string) => void;
 }
 
-export function SpecialtyAutocomplete({ value, onChange }: SpecialtyAutocompleteProps) {
+export function SpecialtyAutocomplete({
+  value,
+  onChange,
+}: SpecialtyAutocompleteProps) {
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -29,34 +32,37 @@ export function SpecialtyAutocomplete({ value, onChange }: SpecialtyAutocomplete
         setIsOpen(false);
       }
     }
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
     <div className="flex-1 relative" ref={ref}>
-      <Label htmlFor="specialty" className="text-sm font-medium text-gray-700 mb-1 block">
+      <Label
+        htmlFor="specialty"
+        className="text-md text-foreground mb-1 font-semibold block"
+      >
         Specjalizacja
       </Label>
       <div className="relative">
-        <Heart className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+        <Heart className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-secondary-foreground" />
         <Input
           id="specialty"
           type="text"
-          placeholder="Kardiolog zwierzęcy"
+          placeholder="Specjalizacja..."
           value={value}
           onChange={handleInputChange}
           onFocus={() => setIsOpen(true)}
-          className="pl-10 pr-8 h-12"
+          className="pl-10 pr-8 h-12 bg-card border-none shadow-none font-semibold rounded-lg"
         />
-        <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+        <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-secondary-foreground" />
 
         {isOpen && filteredOptions.length > 0 && (
           <div className="absolute z-50 w-full mt-1 bg-white border border-gray-200 rounded-md shadow-lg max-h-60 overflow-auto">
             {filteredOptions.map((specialty) => (
               <div
                 key={specialty}
-                className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm"
+                className="px-4 py-2 hover:bg-accent cursor-pointer text-sm font-semibold"
                 onClick={() => handleSelect(specialty)}
               >
                 {specialty}

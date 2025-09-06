@@ -36,28 +36,28 @@ export function LocationAutocomplete({ value, onChange }: LocationAutocompletePr
 
   return (
     <div className="flex-1 relative" ref={ref}>
-      <Label htmlFor="location" className="text-sm font-medium text-gray-700 mb-1 block">
-        Lokalizacja
+      <Label htmlFor="location" className="text-md text-foreground mb-1 font-semibold block">
+      Miejscowość
       </Label>
       <div className="relative">
-        <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+        <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-primary" />
         <Input
           id="location"
           type="text"
-          placeholder="Warszawa"
+          placeholder="Miejscowość..."
           value={value}
           onChange={handleInputChange}
           onFocus={() => setIsOpen(true)}
-          className="pl-10 pr-8 h-12"
+          className="pl-10 pr-8 h-12 bg-card border-none shadow-none font-semibold rounded-lg"
         />
-        <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+        <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-primary" />
 
         {isOpen && filteredOptions.length > 0 && (
           <div className="absolute z-50 w-full mt-1 bg-white border border-gray-200 rounded-md shadow-lg max-h-60 overflow-auto">
             {filteredOptions.map((city) => (
               <div
                 key={city}
-                className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm"
+                className="px-4 py-2 hover:bg-accent cursor-pointer text-sm font-semibold"
                 onClick={() => handleSelect(city)}
               >
                 {city}

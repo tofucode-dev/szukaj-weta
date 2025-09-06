@@ -1,14 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat, Merriweather, Source_Code_Pro, Pacifico } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const montserratSans = Montserrat({
+  variable: "--font-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const sourceCodeProMono = Source_Code_Pro({
+  variable: "--font-mono",
+  subsets: ["latin"],
+});
+
+const merriweatherSerif = Merriweather({
+  variable: "--font-serif",
+  subsets: ["latin"],
+});
+
+const pacifico = Pacifico({
+  variable: "--font-pacifico",
+  weight: ["400"],
   subsets: ["latin"],
 });
 
@@ -25,9 +36,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${montserratSans.variable} ${sourceCodeProMono.variable} ${merriweatherSerif.variable} ${pacifico.variable} antialiased`}
       >
+        <main className="mx-auto">
         {children}
+        </main>
+       
       </body>
     </html>
   );
